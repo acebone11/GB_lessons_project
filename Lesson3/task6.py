@@ -1,5 +1,4 @@
-def my_func(text):
-    text = text.capitalize()
-    return text.capitalize()
-text = input("Введите текст для преобрования первой буквы в заглавную >>> ")
-print(my_func(text))
+def int_func(text):
+    return text.title()
+my_text = input('Введите текст >>> ')
+print(int_func(my_text))
