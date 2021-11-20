@@ -31,3 +31,4 @@ def func_lab4():
         print("ошибка ввода")
 
 func_lab4()
+os.system('pause')
