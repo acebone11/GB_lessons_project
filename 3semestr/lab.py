@@ -11,6 +11,6 @@ for h in range(a,b):
 print(my_list)
 
 for i in range(len(my_list)):
-    if my_list[i] < m and not my_list[i] in my_list[0:i]:
+    if my_list[i] <= m and not my_list[i] in my_list[0:i]:
         k+=1
-print(k)
+print("число различных элементов до M  ",  k)
