@@ -10,10 +10,16 @@ class lab4(QtWidgets.QMainWindow,interface.Ui_MainWindow):
         self.pushButton.clicked.connect(self.myfunc)
 
     def myfunc(self):
-        text ='это нужно вывести на дисплей \n'
+        with open('1.txt','r') as first, open('2.txt','w') as second:
+            data = first.read()
+            second.write(data)
 
-        self.textBrowser.setText(text)
-        self.textBrowser_2.setText(text)
+        with open('2.txt','r') as second_print:
+            data2 = second_print.read()
+
+
+        self.textBrowser.setText(data)
+        self.textBrowser_2.setText(data2)
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
