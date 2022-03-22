@@ -10,9 +10,20 @@ class lab4(QtWidgets.QMainWindow,interface.Ui_MainWindow):
         self.pushButton.clicked.connect(self.myfunc)
 
     def myfunc(self):
+        with open('1.txt') as first_read:
+            data =first_read.read()
         with open('1.txt','r') as first, open('2.txt','w') as second:
-            data = first.read()
-            second.write(data)
+
+            for line in first:
+
+                line = line.rstrip('\n')
+                s = [int(s) for s in str.split(line) if s.isdigit()]
+                s = str(s)
+                b = ''.join(s)
+                e = line + " " + b + '\n'
+
+                second.write(e)
+
 
         with open('2.txt','r') as second_print:
             data2 = second_print.read()
